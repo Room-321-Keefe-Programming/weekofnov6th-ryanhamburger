@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -101,7 +102,7 @@ namespace WeekOfNov6th
             {
                 if (chkMileToKilo.Checked == false && chkMeterToInch.Checked == false)
                 {
-                    rtbOutput.Text = "please choose atleast one checkmark. \n";
+                    rtbOutput.Text = "please choose atleast one top checkmark. \n";
                 }
                 else
                 {
@@ -139,7 +140,7 @@ namespace WeekOfNov6th
             {
                 if (chkKiloToMiles.Checked == false && chkInchToMeter.Checked == false)
                 {
-                    rtbOutput.Text += "please choose atleast one checkmark. \n";
+                    rtbOutput.Text = "please choose atleast one bottom checkmark. \n";
                 }
                 else
                 {
@@ -182,6 +183,32 @@ namespace WeekOfNov6th
         private void btnClear_Click(object sender, EventArgs e)
         {
             rtbOutput.Text = "";
+        }
+
+        private void btnText_Click(object sender, EventArgs e)
+        {
+            string file = "c:\\Users\\Ryan Oliveira\\source\\repos\\weekofnov6th-ryanhamburger\\WeekOfNov6th\\bin\\test.txt";
+            string whatsinthefile = File.ReadAllText(file);
+            string[] thingy = whatsinthefile.Split(' ');
+            string inputone = rtbInput1.Text;
+            int theotherinput = int.Parse(inputone);
+
+            if (rtbInput2.Text != "")
+            {
+               for (int i = 0; i < thingy.Length; i += theotherinput)
+                {
+                    rtbOutput.Text += thingy[i] + " ";
+                } 
+            }
+            else
+            {
+                rtbOutput.Text = "please type something in input 2. \n";
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            cmbMoneyConverter.SelectedIndex = 0;
         }
     }
 }

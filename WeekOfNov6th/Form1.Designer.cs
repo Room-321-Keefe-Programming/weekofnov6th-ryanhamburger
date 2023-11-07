@@ -50,6 +50,7 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.btnDistance2 = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.btnText = new System.Windows.Forms.Button();
             this.grpTempConverter.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -285,11 +286,23 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // btnText
+            // 
+            this.btnText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnText.Location = new System.Drawing.Point(855, 372);
+            this.btnText.Name = "btnText";
+            this.btnText.Size = new System.Drawing.Size(156, 86);
+            this.btnText.TabIndex = 21;
+            this.btnText.Text = "Tuesday";
+            this.btnText.UseVisualStyleBackColor = true;
+            this.btnText.Click += new System.EventHandler(this.btnText_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1061, 648);
+            this.Controls.Add(this.btnText);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDistance2);
             this.Controls.Add(this.chkKiloToMiles);
@@ -311,6 +324,7 @@
             this.Controls.Add(this.lblTemperatureConverter);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.grpTempConverter.ResumeLayout(false);
             this.grpTempConverter.PerformLayout();
             this.ResumeLayout(false);
@@ -342,6 +356,7 @@
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button btnDistance2;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnText;
     }
 }
 

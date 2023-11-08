@@ -30,8 +30,8 @@
         {
             this.lblTemperatureConverter = new System.Windows.Forms.Label();
             this.lblMoneyConvert = new System.Windows.Forms.Label();
-            this.rdoTempConverter1 = new System.Windows.Forms.RadioButton();
-            this.rdoTempConverter2 = new System.Windows.Forms.RadioButton();
+            this.rdoCtoF = new System.Windows.Forms.RadioButton();
+            this.rdoFtoC = new System.Windows.Forms.RadioButton();
             this.grpTempConverter = new System.Windows.Forms.GroupBox();
             this.cmbMoneyConverter = new System.Windows.Forms.ComboBox();
             this.btnTemperature = new System.Windows.Forms.Button();
@@ -51,6 +51,8 @@
             this.btnDistance2 = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnText = new System.Windows.Forms.Button();
+            this.btnLoadFile = new System.Windows.Forms.Button();
+            this.btnWednesday = new System.Windows.Forms.Button();
             this.grpTempConverter.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,32 +76,32 @@
             this.lblMoneyConvert.TabIndex = 1;
             this.lblMoneyConvert.Text = "Money Converter";
             // 
-            // rdoTempConverter1
+            // rdoCtoF
             // 
-            this.rdoTempConverter1.AutoSize = true;
-            this.rdoTempConverter1.Location = new System.Drawing.Point(18, 31);
-            this.rdoTempConverter1.Name = "rdoTempConverter1";
-            this.rdoTempConverter1.Size = new System.Drawing.Size(196, 28);
-            this.rdoTempConverter1.TabIndex = 2;
-            this.rdoTempConverter1.TabStop = true;
-            this.rdoTempConverter1.Text = "Celsius - Fahrenheit";
-            this.rdoTempConverter1.UseVisualStyleBackColor = true;
+            this.rdoCtoF.AutoSize = true;
+            this.rdoCtoF.Location = new System.Drawing.Point(18, 31);
+            this.rdoCtoF.Name = "rdoCtoF";
+            this.rdoCtoF.Size = new System.Drawing.Size(196, 28);
+            this.rdoCtoF.TabIndex = 2;
+            this.rdoCtoF.TabStop = true;
+            this.rdoCtoF.Text = "Celsius - Fahrenheit";
+            this.rdoCtoF.UseVisualStyleBackColor = true;
             // 
-            // rdoTempConverter2
+            // rdoFtoC
             // 
-            this.rdoTempConverter2.AutoSize = true;
-            this.rdoTempConverter2.Location = new System.Drawing.Point(234, 31);
-            this.rdoTempConverter2.Name = "rdoTempConverter2";
-            this.rdoTempConverter2.Size = new System.Drawing.Size(196, 28);
-            this.rdoTempConverter2.TabIndex = 3;
-            this.rdoTempConverter2.TabStop = true;
-            this.rdoTempConverter2.Text = "Fahrenheit - Celsius";
-            this.rdoTempConverter2.UseVisualStyleBackColor = true;
+            this.rdoFtoC.AutoSize = true;
+            this.rdoFtoC.Location = new System.Drawing.Point(234, 31);
+            this.rdoFtoC.Name = "rdoFtoC";
+            this.rdoFtoC.Size = new System.Drawing.Size(196, 28);
+            this.rdoFtoC.TabIndex = 3;
+            this.rdoFtoC.TabStop = true;
+            this.rdoFtoC.Text = "Fahrenheit - Celsius";
+            this.rdoFtoC.UseVisualStyleBackColor = true;
             // 
             // grpTempConverter
             // 
-            this.grpTempConverter.Controls.Add(this.rdoTempConverter1);
-            this.grpTempConverter.Controls.Add(this.rdoTempConverter2);
+            this.grpTempConverter.Controls.Add(this.rdoCtoF);
+            this.grpTempConverter.Controls.Add(this.rdoFtoC);
             this.grpTempConverter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpTempConverter.Location = new System.Drawing.Point(321, 38);
             this.grpTempConverter.Name = "grpTempConverter";
@@ -291,17 +293,41 @@
             this.btnText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnText.Location = new System.Drawing.Point(855, 372);
             this.btnText.Name = "btnText";
-            this.btnText.Size = new System.Drawing.Size(156, 86);
+            this.btnText.Size = new System.Drawing.Size(156, 42);
             this.btnText.TabIndex = 21;
             this.btnText.Text = "Tuesday";
             this.btnText.UseVisualStyleBackColor = true;
             this.btnText.Click += new System.EventHandler(this.btnText_Click);
+            // 
+            // btnLoadFile
+            // 
+            this.btnLoadFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadFile.Location = new System.Drawing.Point(855, 420);
+            this.btnLoadFile.Name = "btnLoadFile";
+            this.btnLoadFile.Size = new System.Drawing.Size(156, 42);
+            this.btnLoadFile.TabIndex = 22;
+            this.btnLoadFile.Text = "LoadFile";
+            this.btnLoadFile.UseVisualStyleBackColor = true;
+            this.btnLoadFile.Click += new System.EventHandler(this.btnLoadFile_Click);
+            // 
+            // btnWednesday
+            // 
+            this.btnWednesday.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWednesday.Location = new System.Drawing.Point(767, 334);
+            this.btnWednesday.Name = "btnWednesday";
+            this.btnWednesday.Size = new System.Drawing.Size(244, 32);
+            this.btnWednesday.TabIndex = 23;
+            this.btnWednesday.Text = "Wednesday";
+            this.btnWednesday.UseVisualStyleBackColor = true;
+            this.btnWednesday.Click += new System.EventHandler(this.btnWednesday_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1061, 648);
+            this.Controls.Add(this.btnWednesday);
+            this.Controls.Add(this.btnLoadFile);
             this.Controls.Add(this.btnText);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDistance2);
@@ -336,8 +362,8 @@
 
         private System.Windows.Forms.Label lblTemperatureConverter;
         private System.Windows.Forms.Label lblMoneyConvert;
-        private System.Windows.Forms.RadioButton rdoTempConverter1;
-        private System.Windows.Forms.RadioButton rdoTempConverter2;
+        private System.Windows.Forms.RadioButton rdoCtoF;
+        private System.Windows.Forms.RadioButton rdoFtoC;
         private System.Windows.Forms.GroupBox grpTempConverter;
         private System.Windows.Forms.ComboBox cmbMoneyConverter;
         private System.Windows.Forms.Button btnTemperature;
@@ -357,6 +383,8 @@
         private System.Windows.Forms.Button btnDistance2;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnText;
+        private System.Windows.Forms.Button btnLoadFile;
+        private System.Windows.Forms.Button btnWednesday;
     }
 }
 

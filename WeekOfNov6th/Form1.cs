@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Tracing;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
@@ -534,7 +535,7 @@ namespace WeekOfNov6th
             rtbOutput.Text = "";
         }
 
-        private void btnText_Click(object sender, EventArgs e)
+        private void btnTuesday_Click(object sender, EventArgs e)
         {
             string file = "c:\\Users\\Ryan Oliveira\\source\\repos\\weekofnov6th-ryanhamburger\\WeekOfNov6th\\bin\\test.txt";
             string whatsinthefile = File.ReadAllText(file);
@@ -570,7 +571,6 @@ namespace WeekOfNov6th
 
         private void btnWednesday_Click(object sender, EventArgs e)
         {
-            bool done = false;
             string alpha = "a b c d e f g i j k l m n o p q r s t u v w x y z ";
             string[] alphabet = alpha.Split(' ');
             string print = "";
@@ -606,54 +606,30 @@ namespace WeekOfNov6th
             rtbOutput.Text += "\n";
 
 
-            while (done == false)
+            int count = 0;
+            bool upper = false;
+
+            while (count < 26)
             {
-                for (int i = alphabet.Length - 1; i >= 0; i--)
+                if (upper)
                 {
-
-
-                   /* if (i == 4 || i == 9 || i == 14 || i == 19 || i == 24)
-                    {
-                        rtbOutput.Text += ", ";
-                    }
-                    if (i == 4 || i == 14 || i == 24)
-                    {
-                        rtbOutput.Text += alphabet[i].ToUpper();
-                    }
-                    else
-                    {
-                        rtbOutput.Text += alphabet[i];
-                    } */
-
+                    rtbOutput.Text += alphabet[count].ToUpper();
                 }
-                rtbOutput.Text += "\n";
-                done = true; 
+                else
+                {
+                    rtbOutput.Text += alphabet[count].ToLower();
+                }
+                if ((count+1) % 5 == 0)
+                {
+                    rtbOutput.Text += ", ";
+                    upper = true;
+                }
+                if ((count + 1) % 10 == 0)
+                {
+                    upper = false;
+                }
+                count++;
             }
-
-            /*             for (int i = FirstStrArray.Length-1; i >= 0; i--)
-            {
-                if (i != FirstStrArray.Length - 1)
-                {
-                    richBoxOutput.Text += ",";
-                }
-                richBoxOutput.Text += FirstStrArray[i];
-            }
-            richBoxOutput.Text += "\n";
-
-            */
-
-
-            // comma
-
-            /*                 if (i != 0)
-                {
-                    rtbOutput.Text += ",";
-                }
-
-            */
-
-            /* String[] alphabet2 = new string[alphabet.Length + 1];
-            rtbOutput.Text += alphabet2; */
         }
     }
 }

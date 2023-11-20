@@ -619,7 +619,7 @@ namespace WeekOfNov6th
                 {
                     rtbOutput.Text += alphabet[count].ToLower();
                 }
-                if ((count+1) % 5 == 0)
+                if ((count + 1) % 5 == 0)
                 {
                     rtbOutput.Text += ", ";
                     upper = true;
